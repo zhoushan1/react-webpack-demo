@@ -2,7 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const HtmlWebpackExternalsPlugin = require('html-webpack-externals-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 
 const resolve = (dir) => path.join(__dirname, '..', dir);
 
@@ -26,7 +29,16 @@ module.exports = {
       },
     ],
   },
-  optimization: {// 分离公共包
+  optimization: {
+    minimizer:[
+      new UglifyJsPlugin({//压缩js
+        cache:true,
+        parallel:true,
+        sourceMap:true
+    }),
+    new OptimizeCssAssetsPlugin({})
+    ],
+    // 分离公共包
     splitChunks: { 
       cacheGroups: {
         commons: {
