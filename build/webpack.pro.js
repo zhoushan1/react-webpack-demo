@@ -9,6 +9,8 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const resolve = (dir) => path.join(__dirname, '..', dir);
 
+// TODO  
+// 构建体积优化:动态 Polyfill
 module.exports = {
   mode: 'production', // webpack4新增属性，默认返回production,提供一些默认配置，例如cache:true
   entry: {
