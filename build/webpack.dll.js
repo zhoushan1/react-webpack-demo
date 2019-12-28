@@ -6,7 +6,7 @@ module.exports = {
     vendor: ['react', 'react-dom']
   },
   output: {
-    path: path.join(__dirname, '..', 'dist/vendor'), 
+    path: path.join(__dirname, '..', '/dll'), 
     filename: '[name].dll.js',
     library: '[name]_[hash]'
     // vendor.dll.js中暴露出的全局变量名。
@@ -20,7 +20,7 @@ module.exports = {
       // 定义打包的公共vendor文件对外暴露的函数名
       name: '[name]_[hash]',
       // manifest.json文件的输出位置
-      path: path.join(__dirname, '..', 'dist/vendor/manifest.json')
+      path: path.join(__dirname, '..', 'dll/manifest.json')
     })
   ]
 }

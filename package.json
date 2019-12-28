@@ -2,6 +2,12 @@
   "name": "react-webpack-demo",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --config build/webpack.dev.js",
+    "dll": "webpack --config build/webpack.dll.js",
+    "build": "webpack --config build/webpack.pro.js"
+  },
   "dependencies": {
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -14,16 +20,13 @@
     "@babel/preset-env": "^7.7.7",
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
+    "clean-webpack-plugin": "^3.0.0",
+    "html-webpack-externals-plugin": "^3.8.0",
     "html-webpack-plugin": "^3.2.0",
     "react-hot-loader": "^4.12.18",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --config build/webpack.dev.js",
-    "dev_dll": "webpack --config build/webpack.dll.js"
   },
   "keywords": [],
   "author": "",
